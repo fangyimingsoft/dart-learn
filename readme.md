@@ -1,5 +1,5 @@
 # [dart学习](http://dart.goodev.org/guides/language/language-tour):
->### 1.dart核心概念:
+### 1.dart核心概念:
 #### 1)**所有变量**的值都是**对象**,数字、函数、null,所有对象都继承自Object
 
 #### 2)dart是**强类型**语言,可以使用var声明变量,dart会推导出变量类型,当类型值不确定时,可以使用dynamic声明变量(我理解的使用dynamic等同于Object声明变量)
@@ -11,7 +11,7 @@
 #### 5)和Java不一样,Dart没有public protected private关键字,如果一个变量以_(下划线)开始,那么这个变量就是这个library私有的
 
 
->###2.语言特点
+### 2.语言特点
 ####1)未初始化的变量值为null
 ```
     int a;
