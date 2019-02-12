@@ -1,4 +1,4 @@
-#[dart学习](http://dart.goodev.org/guides/language/language-tour):
+# [dart学习](http://dart.goodev.org/guides/language/language-tour):
 >###1.dart核心概念:
 ####1)**所有变量**的值都是**对象**,数字、函数、null,所有对象都继承自Object
 
