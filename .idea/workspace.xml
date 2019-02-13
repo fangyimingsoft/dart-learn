@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd4eba16-128f-464c-8344-9ac9d80b293a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -64,13 +62,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dart" value="10622" />
-          <entry key="md" value="5933" />
+          <entry key="md" value="6040" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dart" value="10622" />
-          <entry key="Markdown" value="5772" />
+          <entry key="Markdown" value="5879" />
           <entry key="PLAIN_TEXT" value="161" />
         </counts>
       </usages-collector>
@@ -136,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://D:/dart/dart-sdk/lib/core/core.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
+            <state relative-caret-position="182">
               <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
               <folding>
                 <element signature="e#5454#5479#0" expanded="true" />
@@ -150,8 +148,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="635">
-                <caret line="532" lean-forward="true" selection-start-line="532" selection-end-line="532" />
+              <first_editor relative-caret-position="125">
+                <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -382,12 +380,12 @@
       <workItem from="1548203803566" duration="24950000" />
       <workItem from="1549851157882" duration="4655000" />
       <workItem from="1549934052522" duration="7480000" />
-      <workItem from="1550021326218" duration="1201000" />
+      <workItem from="1550021326218" duration="2352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77810000" />
+    <option name="totallyTimeSpent" value="78961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -718,17 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/dart/dart-sdk/lib/core/core.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-          <folding>
-            <element signature="e#5454#5479#0" expanded="true" />
-            <element signature="e#5917#5941#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/dart/dart-sdk/lib/io/socket.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13277">
@@ -777,11 +764,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/dart/dart-sdk/lib/core/core.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+          <folding>
+            <element signature="e#5454#5479#0" expanded="true" />
+            <element signature="e#5917#5941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="635">
-            <caret line="532" lean-forward="true" selection-start-line="532" selection-end-line="532" />
+          <first_editor relative-caret-position="125">
+            <caret line="202" column="10" selection-start-line="202" selection-start-column="10" selection-end-line="202" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>
