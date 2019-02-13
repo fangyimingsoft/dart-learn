@@ -529,6 +529,39 @@ finally :
 8.库和可见性
 ------------
 
+9.异步支持
+----------
+  
+***dart2.0后,async函数执行时,不是立刻挂起,而是要执行到函数内部的第一个await。***
+
+- Future
+   
+   Dart库中有很多返回Future或Stream对象的方法，这些方法是异步的。
+   
+   有两种方式可以使用Future对象中的数据： 
+   
+   - 使用async和await
+      
+      使用async标记一个方法为异步方法，使用await来等待异步方法返回（方法体中使用了await关键字的方法必须是异步方法）。
+      ```
+       //在一个方法上添加async关键字,则这个方法返回值为Future。此方法成为一个异步方法。且该方法返回一个Future
+       Future<String> lookUpVersion() async => '1.0.1';
+      ```
+      
+      ```
+        await expression
+      ```
+      
+      在一个异步方法内可以多次使用await表达式，await表达式会阻塞住，直到表达式执行完成。
+      
+   - 使用Future API
+
+- Stream
+    从Stream中获取数据也有两种方式：
+    
+    - 使用async和一个异步for循环（await for）
+    
+    - 使用Stream API
 
     
     
