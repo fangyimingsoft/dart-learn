@@ -1,42 +1,45 @@
-#[dart学习](http://dart.goodev.org/guides/language/language-tour):
->###1.dart核心概念:
-####1)**所有变量**的值都是**对象**,数字、函数、null,所有对象都继承自Object
+# [dart学习](http://dart.goodev.org/guides/language/language-tour):
+1.dart核心概念:
+----------
 
-####2)dart是**强类型**语言,可以使用var声明变量,dart会推导出变量类型,当类型值不确定时,可以使用dynamic声明变量(我理解的使用dynamic等同于Object声明变量)
+- **所有变量**的值都是**对象**,数字、函数、null,所有对象都继承自Object
 
-####3)dart支持顶级函数,(像main()),函数也可以依赖于类(静态函数)或者对象(对象中的函数)
+- dart是**强类型**语言,可以使用var声明变量,dart会推导出变量类型,当类型值不确定时,可以使用dynamic声明变量(我理解的使用dynamic等同于Object声明变量)
 
-####4)同样的,dart支持顶级变量,依赖于类或者对象
+- dart支持顶级函数,(像main()),函数也可以依赖于类(静态函数)或者对象(对象中的函数)
 
-####5)和Java不一样,Dart没有public protected private关键字,如果一个变量以_(下划线)开始,那么这个变量就是这个library私有的
+- 同样的,dart支持顶级变量,依赖于类或者对象
+
+- 和Java不一样,Dart没有public protected private关键字,如果一个变量以_(下划线)开始,那么这个变量就是这个library私有的
 
 
->###2.语言特点
-####1)未初始化的变量值为null
+2.语言特点
+----------
+- 未初始化的变量值为null
 ```
     int a;
     print(a); => null;
 ```
 
-####2)
+- 语法和关键字
+   - final:
+      1. final声明的变量无法重新赋值。
+      2. final声明变量可以省略声明变量类型(final无法和var一起使用)
 
->###3.语法和关键字
-####final:
-#####1.final声明的变量无法重新赋值。
-#####2.final声明变量可以省略声明变量类型(final无法和var一起使用)
-
-####const:
-#####1.可以用来声明一个常量(无法和var一起使用,可以省略变量类型)
-#####2.在编译时确定值***
-#####3.可以使用数字或字符串字面量、const变量或者常量数字算术运算的结果
-#####4.const还可以用来创建常量值
-```
-var a = const [];  //a不是常量,a的值是常量
-const b = [];           //b是常量,b的值不是常量
-const c = const [];     //c是常量,c的值也是常量
-```
->###4.内置类型
-####Dart语言对以下类型有特殊的支持:
+   - const:
+      1. 可以用来声明一个常量(无法和var一起使用,可以省略变量类型)
+      2. 在编译时确定值***
+      3. 可以使用数字或字符串字面量、const变量或者常量数字算术运算的结果
+      4. const还可以用来创建常量值
+      ```
+      var a = const [];  //a不是常量,a的值是常量
+      const b = [];           //b是常量,b的值不是常量
+      const c = const [];     //c是常量,c的值也是常量
+      ```
+      
+3.内置类型
+----------
+Dart语言对以下类型有特殊的支持:
 ```
 numbers
 strings
@@ -60,7 +63,8 @@ runes:
 //dart中的runes是utf-32字符集的String对象
 ```
 
->###5.Function
+4.Function
+----------
 
 Dart是一个真正的面向对象的语言,方法也是对象并且具有一种类型,Function。也就是说，方法可以赋值给变量，也可以当做其他方法的参数。（也可以把Dart类的实例当做方法来调用）
 
@@ -69,87 +73,89 @@ Dart是一个真正的面向对象的语言,方法也是对象并且具有一种
 [必须的]在参数列表前面,后面是[可选的]参数,其中,[可选的]参数可以是[命名参数]或[基于位置]的参数,但是这两种不能同时当做可选参数
 
 所有函数都有一个返回值。如果没有指定返回值，则默认把return null作为函数的最后一个语句执行。
-#####1）定义方法时,使用{type value,type value}定义可选参数,当没有传入可选参数时,value的类型为Null,值为null
-```
-int func4(int a,int b,{int c,int d}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
-```
 
-#####2）使用{value : type,value : type}定义可选参数时,当没有传入这个可选参数,value的类型为Type,值为int
-```
-int func5(int a,int b,{c : int,d : int}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
+1. 定义方法时,使用{type value,type value}定义可选参数,当没有传入可选参数时,value的类型为Null,值为null
+   ```
+   int func4(int a,int b,{int c,int d}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
+   ```
 
-int func6(int a,int b,{c : int,int d}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
-```
+2. 使用{value : type,value : type}定义可选参数时,当没有传入这个可选参数,value的类型为Type,值为int
+   ```
+   int func5(int a,int b,{c : int,d : int}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
+ 
+   int func6(int a,int b,{c : int,int d}) => a + b + (c != null ? c : 0) + (d != null ? d : 0);
+   ```
 
-####3）定义位置参数,使用[type value,type value]定义
-```
-int func7(int a ,[int b,int c]){
-    return a + (b != null ? b : 0) + (c != null ? c : 0);
-}
-```
+3. 定义位置参数,使用[type value,type value]定义
+   ```
+   int func7(int a ,[int b,int c]){
+       return a + (b != null ? b : 0) + (c != null ? c : 0);
+   }
+   ```
 
-####4）可选参数的默认值设置，使用 = 给可选参数设置默认值，参数值必须是常量
-```
-int func8(int a,[int b = 0,int c = 0]){
-    return a + b + c;
-}
-int func9(int a ,{int b = 0,int c = 0}) => a + b + c;
-```
+4. 可选参数的默认值设置，使用 = 给可选参数设置默认值，参数值必须是常量
+   ```
+   int func8(int a,[int b = 0,int c = 0]){
+       return a + b + c;
+   }
+   int func9(int a ,{int b = 0,int c = 0}) => a + b + c;
+   ```
 
-####5）调用方法
-```
- /**
-   * 可选命名参数调用
-   */
-  var a = FunctionDefine().func4(1, 2,c : 2);
-  var b = FunctionDefine().func5(1, 2,c : 2,d : 3);
-  var c = FunctionDefine().func6(1, 2,c : 2);
-  print("a : $a , b : $b , c : $c");
+5. 调用方法
+    ```
+     /**
+       * 可选命名参数调用
+       */
+      var a = FunctionDefine().func4(1, 2,c : 2);
+      var b = FunctionDefine().func5(1, 2,c : 2,d : 3);
+      var c = FunctionDefine().func6(1, 2,c : 2);
+      print("a : $a , b : $b , c : $c");
+    
+    
+      /**
+       * 可选位置参数调用
+       */
+      var a1 = FunctionDefine().func7(1,2);
+      var a2 = FunctionDefine().func7(1,2,3);
+      print("a1 : $a1 , a2 : $a2");
+    
+    
+      /**
+       * 匿名函数(又称lambda或者closure闭包)
+       *
+       */
+      Function noneName = (int a ,int b,{int c = 0}){
+    
+      };
+    ```
 
+5.操作符
+----------
 
-  /**
-   * 可选位置参数调用
-   */
-  var a1 = FunctionDefine().func7(1,2);
-  var a2 = FunctionDefine().func7(1,2,3);
-  print("a1 : $a1 , a2 : $a2");
+特殊操作符
 
-
-  /**
-   * 匿名函数(又称lambda或者closure闭包)
-   *
-   */
-  Function noneName = (int a ,int b,{int c = 0}){
-
-  };
-```
-
->###6操作符
-####特殊操作符
-```
-    ~/  是除号,但是返回值为整数
-    ==  默认比较的是两个对象引用是否相等(使用identical()方法比较两个对象是否是同一个对象)
-    ??= 
-        a = 1;
-        b ??= value;//如果b是null,则赋值给b,如果b不是null,则b的值保持不变
-    ??(expr1 ? expr2)
-        如果expr1是non-null则返回其值,否则执行expr2并返回其结果
-    ..  级联操作符,可以在同一个对象上连续调用多个函数以及访问成员变量
-        querySelector('#button')
-            ..text = 'hello dart'
-            ..classes.add('light-button')
-            ..onClick = ()=>{print('click')};
-    ?.  条件成员访问
-        var a = new Object();
-        a = null;
-        print(a?.hashCode);//如果a为null则返回null,否则返回hashCode成员
-        
-        a?.field = 1;//如果a为null则不赋值,否则赋值给a.field
-        
-        
-        
-        
-```
+    ```
+        ~/  是除号,但是返回值为整数
+        ==  默认比较的是两个对象引用是否相等(使用identical()方法比较两个对象是否是同一个对象)
+        ??= 
+            a = 1;
+            b ??= value;//如果b是null,则赋值给b,如果b不是null,则b的值保持不变
+        ??(expr1 ? expr2)
+            如果expr1是non-null则返回其值,否则执行expr2并返回其结果
+        ..  级联操作符,可以在同一个对象上连续调用多个函数以及访问成员变量
+            querySelector('#button')
+                ..text = 'hello dart'
+                ..classes.add('light-button')
+                ..onClick = ()=>{print('click')};
+        ?.  条件成员访问
+            var a = new Object();
+            a = null;
+            print(a?.hashCode);//如果a为null则返回null,否则返回hashCode成员
+            
+            a?.field = 1;//如果a为null则不赋值,否则赋值给a.field
+            
+         
+    ```
 
 ####类型判定操作符:
 ```
@@ -158,10 +164,12 @@ int func9(int a ,{int b = 0,int c = 0}) => a + b + c;
     is! 如果不是指定的对象则返回true
 ```
 
->###7.异常
+6.异常
+----------
 
 和Java不同,所有Dart异常是***非检查异常***。方法不一定声明了他们所抛出的异常，并且你不要求捕获任何异常。  
 Dart提供Exception和Error类型，以及一些子类型。但是Dart代码可以抛出任何非null对象为异常，不仅仅是实现了Exception或Error的对象。
+
 ```
 throw :
     throw new FormatException('error');
@@ -193,7 +201,8 @@ finally :
 ```
 使用关键字rethrow可以将捕获的异常重新抛出
 
->###8.Classes
+7.Classes
+----------
 ####1.特点
 + 单继承
 + 所有类的父类是Object
@@ -519,7 +528,9 @@ finally :
     //first<T>标记这个函数是一个泛型函数,可以在返回值类型、参数类型、局部变量中使用泛型T
     ```
     
->###9.库和可见性
+8.库和可见性
+------------
+
 
     
     
